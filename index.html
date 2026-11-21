@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0e" />
+  <meta name="description" content="Simule aportes em Bitcoin e compare o resultado com o CDI." />
+  <title>Simulador de Investimento em Bitcoin</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico?v=2" sizes="any" />
+  <link rel="icon" href="bitcoin.svg?v=2" type="image/svg+xml" />
+</head>
+<body>
+
+  <header class="site-head">
+    <div class="wrap">
+      <a class="mark" href="index.html">
+        <img class="mark-logo" src="bitcoin.svg" alt="Logo Bitcoin" width="32" height="32" />
+        <span>Simulador de Investimento em Bitcoin</span>
+      </a>
+      <a class="credit" href="https://www.linkedin.com/in/pedro-lazzarin/" target="_blank">by:peedrolzz</a>
+    </div>
+  </header>
+
+  <main class="wrap main-grid">
+
+    <section class="tool">
+      <div class="tool-head">
+        <h1 class="headline">
+          Quantos <em>Bitcoins</em> você teria,
+          <br/>se tivesse começado antes?
+        </h1>
+        <p class="lead">Informe os valores e o período, comparamos o resultado do investimento em Bitcoin com o rendimento do CDI no mesmo intervalo.</p>
+      </div>
+
+      <form id="form" class="form-grid">
+        <label>
+          <span>Entrada:</span>
+          <div class="prefix">
+            <i>R$</i>
+            <input type="number" id="initial" min="0" step="100" value="1000" />
+          </div>
+        </label>
+
+        <label>
+          <span>Aporte mensal:</span>
+          <div class="prefix">
+            <i>R$</i>
+            <input type="number" id="amount" min="0" step="10" value="200" required />
+          </div>
+        </label>
+
+        <label>
+          <span>Desde:</span>
+          <input type="month" id="start" min="2010-08" required />
+        </label>
+
+        <button type="submit" id="simulate" class="go">Simular</button>
+      </form>
+
+      <p class="status" id="status" aria-live="polite"></p>
+
+      <div class="results" id="results" hidden aria-live="polite">
+
+        <div class="headline-result">
+          <p class="eyebrow">Hoje você teria acumulado em Bitcoin:</p>
+          <div class="hero-num">
+            <strong id="current">R$ 0</strong>
+            <span id="currentDelta" class="delta"></span>
+          </div>
+        </div>
+
+        <div class="stats-row">
+          <div class="stat">
+            <span>Você investiu</span>
+            <strong id="invested"></strong>
+          </div>
+          <div class="stat">
+            <span>Se optasse pelo CDI</span>
+            <strong id="cdi"></strong>
+          </div>
+          <div class="stat">
+            <span>Você teria em Bitcoin</span>
+            <strong id="btc"></strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <aside class="ad" aria-label="Espaço publicitário">
+      <span>Anuncie aqui</span>
+    </aside>
+
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-inner">
+      <span>© <span id="year"></span> Pedro Lazzarin</span>
+      <a href="https://peedrolzz.github.io/site-pessoal/" target="_blank">Site pessoal</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
