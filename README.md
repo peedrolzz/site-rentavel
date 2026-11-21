@@ -1,4 +1,4 @@
-﻿Projeto incremental 2: ServiÃ§o web rentÃ¡vel
+﻿Projeto incremental 2: Serviço web rentável
 
 HTML + CSS + JS
 
